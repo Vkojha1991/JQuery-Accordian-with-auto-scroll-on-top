@@ -1,0 +1,79 @@
+<!Doctype html>
+<html>
+	<head>
+		<style>
+			body {
+				font-size:18px;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		
+		<ul class="accordion">
+			
+			<li>
+				<a href="javascript:void(0)">Accordion-1</a>
+				<div style="display:block">
+					<p>Lorem ipsum dolor sit amet, vel nibh brute ubique ut, ex error utroque intellegebat per. Alii vidit porro eum ut, et cum agam vulputate. An ius tollit alienum elaboraret, in eam putant necessitatibus, usu phaedrum philosophia in. Vel id partem partiendo, tacimates qualisque deterruisset ei vel. Mel ut probo ferri reprehendunt, ea prompta temporibus duo, exerci corpora et eos.</p>
+				</div>
+			</li>
+
+			<li>
+				<a href="javascript:void(0)">Accordion-2</a>
+				<div>
+					<p>Lorem ipsum dolor sit amet, vel nibh brute ubique ut, ex error utroque intellegebat per. Alii vidit porro eum ut, et cum agam vulputate. An ius tollit alienum elaboraret, in eam putant necessitatibus, usu phaedrum philosophia in. Vel id partem partiendo, tacimates qualisque deterruisset ei vel. Mel ut probo ferri reprehendunt, ea prompta temporibus duo, exerci corpora et eos.</p>
+				</div>
+			</li>
+
+			<li>
+				<a href="javascript:void(0)">Accordion-3</a>
+				<div>
+					<p>Lorem ipsum dolor sit amet, vel nibh brute ubique ut, ex error utroque intellegebat per. Alii vidit porro eum ut, et cum agam vulputate. An ius tollit alienum elaboraret, in eam putant necessitatibus, usu phaedrum philosophia in. Vel id partem partiendo, tacimates qualisque deterruisset ei vel. Mel ut probo ferri reprehendunt, ea prompta temporibus duo, exerci corpora et eos.</p>
+				</div>
+			</li>
+
+			<li>
+				<a href="javascript:void(0)">Accordion-4</a>
+				<div>
+					<p>Lorem ipsum dolor sit amet, vel nibh brute ubique ut, ex error utroque intellegebat per. Alii vidit porro eum ut, et cum agam vulputate. An ius tollit alienum elaboraret, in eam putant necessitatibus, usu phaedrum philosophia in. Vel id partem partiendo, tacimates qualisque deterruisset ei vel. Mel ut probo ferri reprehendunt, ea prompta temporibus duo, exerci corpora et eos.</p>
+				</div>
+			</li>
+		
+		</ul>
+
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				var el = $('.accordion').children();
+				anchor = el.children('a').addClass('anchor-link');
+				content = el.children('div').addClass('content');
+				content.hide();
+				anchor.on('click', function(){
+					var content_block = $(this).next();	
+					content.slideUp(600);
+					var top = $(this).parents('.accordion').offset().top;
+					if(content_block.is(':visible')) {
+						content_block.slideUp(600);
+					}
+					else {
+						content_block.slideDown(function(){
+							$('html, body').animate({
+								scrollTop: top
+							}, 1000);
+						});
+					}
+				});
+			});
+
+		</script>
+
+		
+
+
+	</body>
+</html>
